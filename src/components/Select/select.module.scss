@@ -11,5 +11,8 @@
     height: 35px;
     border: 1px solid $silver;
     background: white;
+    .default {
+      color: $silver;
+    }
   }
 }

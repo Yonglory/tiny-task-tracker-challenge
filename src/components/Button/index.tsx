@@ -9,13 +9,15 @@ export enum Kinds {
 type ButtonProps = {
   children: React.ReactNode | React.ReactNodeArray;
   kind: Kinds;
+  // disabled: boolean;
 };
 
 const Button = ({ kind, children }: ButtonProps) => {
   return (
     <button
       type="submit"
-      className={`${styles.button} ${styles[kind || "primary"]}`}
+      className={`${styles.button} ${styles[kind]}`}
+      // disabled = {disabled}
     >
       {children}
     </button>

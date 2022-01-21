@@ -1,15 +1,15 @@
-@import '../../scss/variables/borders';
-@import '../../scss/variables/colors';
-@import '../../scss/variables/fonts';
-@import '../../scss/variables/spacing';
+@import "../../scss/variables/borders";
+@import "../../scss/variables/colors";
+@import "../../scss/variables/fonts";
+@import "../../scss/variables/spacing";
 
 .button {
   border: transparent solid $border-width;
   border-radius: $border-radius;
   display: block;
-  font-size: $font-regular;
-  margin: $spacing-medium 0;
-  padding: $spacing-text $spacing-regular;
+  font-size: $font-small;
+  margin: $spacing-regular 0;
+  padding: $spacing-small;
   position: relative;
 
   &.primary {
@@ -22,7 +22,7 @@
       background-color: lighten($brand-primary, 20%);
 
       &::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         top: -3px;
