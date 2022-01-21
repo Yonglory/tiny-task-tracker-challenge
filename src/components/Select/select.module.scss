@@ -1,0 +1,15 @@
+@import "../../scss/variables/colors";
+
+.select-field {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  .label {
+    margin-bottom: 0.5rem;
+  }
+  .select {
+    height: 35px;
+    border: 1px solid $silver;
+    background: white;
+  }
+}
