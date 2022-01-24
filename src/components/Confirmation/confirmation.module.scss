@@ -1,0 +1,13 @@
+@import '../../scss/variables/colors';
+@import '../../scss/variables/fonts';
+@import '../../scss/variables/spacing';
+
+.confirmation {
+  background-color: $panache;
+  border: 1px solid $apple;
+//   max-width: 600px;
+  margin: $spacing-regular auto;
+  padding: $spacing-small;
+  text-align: left;
+}
+

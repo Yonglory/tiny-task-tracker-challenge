@@ -9,4 +9,13 @@ export async function getMembers() {
     } catch (error) {
       return null;
     }
+}
+export async function submitTask(params:any) {
+  try {
+    const url = `${API_URL}tasks`;
+    const response = await axios.post(url, params);
+    return response.data;
+  } catch (error) {
+    return null;
   }
+}

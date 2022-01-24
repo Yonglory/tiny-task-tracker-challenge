@@ -22,7 +22,7 @@ const Input = ({ id, label, members, onChange }: InputProps) => {
     <div className={styles["select-field"]}>
       <label className={styles.label}>{label}</label>
       <select id={id} name={id} className={styles.select} onChange={handleChange}>
-        <option value="" className={styles.default}>Select...</option>
+        <option className={styles.default} selected disabled>Select...</option>
       {members &&
             members.map(({ id, name }) => (
               <option value={name} key={id}>{name}</option>

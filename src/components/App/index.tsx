@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { getMembers } from "../../apiService";
+import { getMembers, submitTask } from "../../apiService";
 import Confirmation from "../Confirmation";
 import Dashboard from "../Dashboard";
 import Button, {Kinds} from "../Button";
@@ -10,6 +10,7 @@ const App = () => {
   const [members, setMembers] = useState();
   const [selectedMember, setSelectedMember] = useState("");
   const [desc, setDesc] = useState("");
+  const [msg, setMsg] = useState("");
   const selectMember = (e:React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedMember(e.target.value)
   }
@@ -30,13 +31,24 @@ const App = () => {
           handleSubmit={() => {
             /*TODO*/
             console.log(selectedMember, desc)
+            if(selectedMember && desc){
+              const params = {
+                description: desc,
+                member: selectedMember
+              }
+              submitTask(params).then((res) => {
+                if(res){
+                  setMsg(`Task #4: "${res.description}" has been assigned to ${res.member}.`)
+                }
+              })
+            }
           }}
         >
           <Input id="description" label={"Task description:"} onChange={changeDesc}/>
           <Select id="task" label={"Assign task to..."} members={members} onChange={selectMember}/>
-          <Button kind={Kinds.primary}>Submit</Button>
+          <Button kind={Kinds.primary} disabled={!selectedMember && !desc}>Submit</Button>
         </Form>
-        <Confirmation message="Show results here..." />
+        {msg && <Confirmation message={msg} />}
       </Dashboard>
     </div>
   );

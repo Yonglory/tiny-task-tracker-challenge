@@ -14,5 +14,10 @@
     .default {
       color: $silver;
     }
+    option {
+      &:disabled, &:selected {
+        color: green;
+      }
+    }
   }
 }
