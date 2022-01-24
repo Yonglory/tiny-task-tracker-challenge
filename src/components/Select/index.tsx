@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./select.module.scss";
 
-interface Members {
+export type Members = {
   id: number;
   name: string;
 }

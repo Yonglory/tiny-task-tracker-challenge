@@ -5,9 +5,9 @@ import Dashboard from "../Dashboard";
 import Button, {Kinds} from "../Button";
 import Form from "../Form";
 import Input from "../Input";
-import Select from '../Select';
+import Select, {Members} from '../Select';
 const App = () => {
-  const [members, setMembers] = useState();
+  const [members, setMembers] = useState<Members[] | []>([]);;
   const [selectedMember, setSelectedMember] = useState("");
   const [desc, setDesc] = useState("");
   const [msg, setMsg] = useState("");
